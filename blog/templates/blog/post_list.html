@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-{% load static %}
+{% load staticfiles %}
 <html lang="en">
 <head>
         <title>제주도 여행코스 </title>
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
  </head>
 
     <body>
@@ -20,9 +21,11 @@
             <!--
             <img src="{{STATIC_URL}}img/Couple_Course.PNG"/>
              -->
-
-            <img src="{% static 'Couple_Course.PNG' %}">
-
+             {% load staticfiles %}
+             <img src="{% static  "Couple_Course.png" %}"  alt="My image1"/>
+             <img src="{% static "djangoapp/Couple_Course.png" %}" alt="My image2"/>
+           {% block content %}
+           {% endblock %}
         </div>
         <br>
         <div>
