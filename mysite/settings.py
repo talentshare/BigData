@@ -118,18 +118,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+
+# STATIC_ROOT는 python manage collectstatic 명령어를 통해서 수집되는 static 파일들이 위치하는 곳입니다
+STATIC_ROOT = ''
+
 # STATIC_URL은 static 파일에 접근하기 위한 url을 작성하는 곳입니다.
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join('static'), )
-#STATICFILES_DIRS = ("D:\djangogirls\blog\templates\image" ,)
-# STATIC_ROOT는 python manage collectstatic 명령어를 통해서 수집되는 static 파일들이 위치하는 곳입니다.
-# 값으로 경로를 작성해주시면 됩니다.
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+# collectstatic 명령어가 여기에 작성된 위치를 돌면서 static 파일을 수집합니다.
+# 하나의 폴더만 입력하더라도 만드시 끝에 ,(콤마)를 줘야 합니다.
+STATICFILES_DIRS=("/var/www/html/mysite/blog/static",  )
+#STATICFILES_DIRS=("D:\djangogirls\blog\templates\static",  )
 
-STATIC_ROOT ='/templates\images\static'
+
+
+
+##################################
+#각 media 파일에 대한 URL Prefix
+MEDIA_URL='/media/'
+
+#업로드된 파일을 저장할 디렉토리 경로
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')

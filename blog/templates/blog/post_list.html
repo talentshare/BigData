@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{%load staticfiles %}
 <html lang="en">
 <head>
         <title>제주도 여행코스 </title>
-        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
  </head>
 
     <body>
+
+            {% for post in posts %}
+                <div>
+                    <h1><a href="">{{post.title}}</a></h1>
+                    <p>{{post.text|linebreaksbr}}</p>
+                       <p>published: {{post.published_date}}</p>
+                </div>
+            {% endfor %}
+
+
 
         <div>
             <h1>[여행코스 워드  클라우드]</h1>
@@ -21,18 +31,23 @@
             <!--
             <img src="{{STATIC_URL}}img/Couple_Course.PNG"/>
              -->
-             {% load staticfiles %}
-             <img src="{% static  "Couple_Course.png" %}"  alt="My image1"/>
-             <img src="{% static "djangoapp/Couple_Course.png" %}" alt="My image2"/>
-           {% block content %}
-           {% endblock %}
+
+
+             <img src="{% static 'blog/Couple_Course.png' %}" >
+
+
+
+             <!--
+            <img src="/static/Couple_Course.png" >
+           -->
+
         </div>
         <br>
         <div>
             <h2><a href="">솔로 데이트 코스</a></h2>
             <p>이호테우해변 -> 봄날카페 -> 올레길(남녀 썸발생) -> 리치망고 -> 더럭분교 </p>
             <p> ->해변 드라이브(남녀 썸발생) -> 협재해수욕장(스킨스쿠버 체험시 남녀 썸발생) </p>
-             <p><img src="D:\\djangogirls\\blog\\templates\\img\\Solo_Course.PNG"></p>
+             <p><img src="{% static 'blog/test.jpg' %}"  width="400"></p>
         </div>
     </body>
 </html>
