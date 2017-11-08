@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'debug':DEBUG,
         },
     },
 ]
@@ -120,7 +121,7 @@ USE_TZ = True
 
 
 # STATIC_ROOT는 python manage collectstatic 명령어를 통해서 수집되는 static 파일들이 위치하는 곳입니다
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles')
 
 # STATIC_URL은 static 파일에 접근하기 위한 url을 작성하는 곳입니다.
 STATIC_URL = '/static/'
@@ -128,7 +129,9 @@ STATIC_URL = '/static/'
 
 # collectstatic 명령어가 여기에 작성된 위치를 돌면서 static 파일을 수집합니다.
 # 하나의 폴더만 입력하더라도 만드시 끝에 ,(콤마)를 줘야 합니다.
-STATICFILES_DIRS=("/var/www/html/mysite/blog/static",  )
+STATICFILES_DIRS=[
+    os.path.join(PROJECT_ROOT, 'static'),
+]
 #STATICFILES_DIRS=("D:\djangogirls\blog\templates\static",  )
 
 
