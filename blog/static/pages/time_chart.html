@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TalentShare</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 구글 차트 코딩 -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+	google.charts.load('current', {'packages':['bar']});
+
+    <!-- 30대 남자 -->
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', '30대 남자');
+
+      data.addRows([
+
+        [[0, 4, 0], 4.2],
+        [[1, 3, 0, 0], 4.65],
+        [[2, 0, 0, 0], 5.21],
+        [[3, 10, 0, 0], 5.56],
+        [[4, 15, 45, 0], 5.77],
+        [[5, 4, 2, 0], 5.91],
+        [[6, 20, 0, 0], 5.89],
+        [[7, 12, 0, 0], 6.39],
+        [[8, 15, 0], 7.73],
+        [[9, 11, 0], 8.97]
+      ]);
+
+      var options = {
+        title: '지역: 아모레 퍼시픽',
+        height: 450
+      };
+
+      var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+
+    <!-- 30대 여자 -->
+    google.charts.setOnLoadCallback(drawChart_W30);
+
+    function drawChart_W30() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', '30대 여자');
+
+      data.addRows([
+
+        [[0, 4, 0], 3.23],
+        [[1, 3, 0, 0], 3.98],
+        [[2, 0, 0, 0], 4.32],
+        [[3, 10, 0, 0], 4.59],
+        [[4, 15, 45, 0], 4.55],
+        [[5, 4, 2, 0], 4.56],
+        [[6, 20, 0, 0], 4.58],
+        [[7, 12, 0, 0], 4.98],
+        [[8, 15, 0], 5.49],
+        [[9, 11, 0], 6.20]
+      ]);
+
+      var options2 = {
+        title: '지역: 자연사 박물관',
+        height: 450
+      };
+
+      var chart = new google.charts.Bar(document.getElementById('chart_div2'));
+
+      chart.draw(data, google.charts.Bar.convertOptions(options2));
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">BigData Analysis</a>
+            </div>
+            <!-- /.navbar-header -->
+
+
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="line_chart.html">연령대별 지역 선호도 차트</a>
+                                </li>
+                                <li>
+                                    <a href="pie_chart.html">월별 남녀 지역 선호도 차트</a>
+                                </li>
+                                <li>
+                                    <a href="time_chart.html">시간대별 지역 선호도 차트</a>
+                                </li>
+                                <li>
+                                    <a href="solo_chart.html">솔로를 위한 최고의 차트</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">시간대별 지역선호도 차트</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <!--- 추가 코딩 Start --->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Time Chart
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+                            <br>
+                            <div id="chart_div"></div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- 추가 코딩 작업 End --->
+
+                  <!--- 추가 코딩 Start --->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Time Chart
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+                            <br>
+                            <div id="chart_div2"></div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- 추가 코딩 작업 End --->
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <script src="../vendor/flot/excanvas.min.js"></script>
+    <script src="../vendor/flot/jquery.flot.js"></script>
+    <script src="../vendor/flot/jquery.flot.pie.js"></script>
+    <script src="../vendor/flot/jquery.flot.resize.js"></script>
+    <script src="../vendor/flot/jquery.flot.time.js"></script>
+    <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+    <script src="../data/flot-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TalentShare</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 구글 pie_chart 코딩 (20대 남자): Start -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart', 'controls']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function changeRange() {
+          programmaticSlider.setState({'lowValue': 2, 'highValue': 5});
+          programmaticSlider.draw();
+      }
+
+      function changeOptions() {
+          programmaticChart.setOption('is3D', true);
+          programmaticChart.draw();
+      }
+
+
+
+      function drawStuff() {
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('programmatic_dashboard_div'));
+
+        // We omit "var" so that programmaticSlider is visible to changeRange.
+        var programmaticSlider = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div',
+          'options': {
+            'filterColumnLabel': '20대 남자',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+
+        var programmaticChart  = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'programmatic_chart_div',
+          'options': {
+            'width': 300,
+            'height': 300,
+            'legend': 'none',
+            'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
+            'pieSliceText': 'value'
+          }
+        });
+
+        var data = google.visualization.arrayToDataTable([
+          ['Name', '20대 남자'],
+          ['제주대학교' , 7.53],
+          ['제주시청', 6.63],
+          ['아모레퍼시픽', 5.05]
+
+        ]);
+
+        dashboard.bind(programmaticSlider, programmaticChart);
+        dashboard.draw(data);
+
+
+      }
+    <!-- 구글 pie_chart 코딩 (20대 남자): End -->
+
+
+    <!-- 구글 pie_chart 코딩 (20대 여자): Start -->
+
+
+      google.charts.setOnLoadCallback(drawStuff_W20);
+
+      function drawStuff_W20() {
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('programmatic_dashboard_div2'));
+
+        // We omit "var" so that programmaticSlider is visible to changeRange.
+        var programmaticSlider2 = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div2',
+          'options': {
+            'filterColumnLabel': '20대 여자',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+
+        var programmaticChart2  = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'programmatic_chart_div2',
+          'options': {
+            'width': 300,
+            'height': 300,
+            'legend': 'none',
+            'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
+            'pieSliceText': 'value'
+          }
+        });
+
+        var data2 = google.visualization.arrayToDataTable([
+          ['Name', '20대 여자'],
+          ['우도' , 7.59],
+          ['성산일출봉', 6.16],
+          ['아모레퍼시픽', 6.16]
+
+        ]);
+
+        dashboard.bind(programmaticSlider2, programmaticChart2);
+        dashboard.draw(data2);
+
+
+      }
+    <!-- 구글 pie_chart 코딩 (20대 여자): End -->
+
+
+
+     <!-- 구글 pie_chart 코딩 (30대 남자): Start -->
+
+      google.charts.setOnLoadCallback(drawStuff_M30);
+
+      function drawStuff_M30() {
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('programmatic_dashboard_div3'));
+
+        // We omit "var" so that programmaticSlider is visible to changeRange.
+        var programmaticSlider3 = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div3',
+          'options': {
+            'filterColumnLabel': '30대 남자',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+
+        var programmaticChart3  = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'programmatic_chart_div3',
+          'options': {
+            'width': 300,
+            'height': 300,
+            'legend': 'none',
+            'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
+            'pieSliceText': 'value'
+          }
+        });
+
+        var data3 = google.visualization.arrayToDataTable([
+          ['Name', '30대 남자'],
+          ['아모레퍼시픽' , 8.79],
+          ['성산일출봉', 8.76],
+          ['우도', 8.53]
+
+        ]);
+
+        dashboard.bind(programmaticSlider3, programmaticChart3);
+        dashboard.draw(data3);
+
+
+      }
+    <!-- 구글 pie_chart 코딩 (30대 남자): End -->
+
+     <!-- 구글 pie_chart 코딩 (30대 여자): Start -->
+
+      google.charts.setOnLoadCallback(drawStuff_W30);
+
+      function drawStuff_W30() {
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('programmatic_dashboard_div4'));
+
+        // We omit "var" so that programmaticSlider is visible to changeRange.
+        var programmaticSlider4 = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div4',
+          'options': {
+            'filterColumnLabel': '30대 여자',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+
+        var programmaticChart4  = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'programmatic_chart_div4',
+          'options': {
+            'width': 300,
+            'height': 300,
+            'legend': 'none',
+            'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
+            'pieSliceText': 'value'
+          }
+        });
+
+        var data4 = google.visualization.arrayToDataTable([
+          ['Name', '30대 여자'],
+          ['성산일출봉' , 9.94],
+          ['퍼시픽랜드', 9.91],
+          ['우도', 9.83]
+
+        ]);
+
+        dashboard.bind(programmaticSlider4, programmaticChart4);
+        dashboard.draw(data4);
+      }
+    <!-- 구글 pie_chart 코딩 (30대 여자): End -->
+
+     <!-- 구글 pie_chart 코딩 (40대 남자): Start -->
+
+      google.charts.setOnLoadCallback(drawStuff_M40);
+
+      function drawStuff_M40() {
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('programmatic_dashboard_div5'));
+
+        // We omit "var" so that programmaticSlider is visible to changeRange.
+        var programmaticSlider5 = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div5',
+          'options': {
+            'filterColumnLabel': '40대 남자',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+
+        var programmaticChart5  = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'programmatic_chart_div5',
+          'options': {
+            'width': 300,
+            'height': 300,
+            'legend': 'none',
+            'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
+            'pieSliceText': 'value'
+          }
+        });
+
+        var data5 = google.visualization.arrayToDataTable([
+          ['Name', '40대 남자'],
+          ['사라오름(올레길)' , 9.92],
+          ['제주민속박물관', 9.91],
+          ['제주서초등학교', 9.85]
+
+        ]);
+
+        dashboard.bind(programmaticSlider5, programmaticChart5);
+        dashboard.draw(data5);
+      }
+    <!-- 구글 pie_chart 코딩 (40대 남자): End -->
+
+     <!-- 구글 pie_chart 코딩 (40대 여자): Start -->
+
+      google.charts.setOnLoadCallback(drawStuff_W40);
+
+      function drawStuff_W40() {
+
+        var dashboard = new google.visualization.Dashboard(
+          document.getElementById('programmatic_dashboard_div6'));
+
+        // We omit "var" so that programmaticSlider is visible to changeRange.
+        var programmaticSlider6 = new google.visualization.ControlWrapper({
+          'controlType': 'NumberRangeFilter',
+          'containerId': 'programmatic_control_div6',
+          'options': {
+            'filterColumnLabel': '40대 여자',
+            'ui': {'labelStacking': 'vertical'}
+          }
+        });
+
+        var programmaticChart6  = new google.visualization.ChartWrapper({
+          'chartType': 'PieChart',
+          'containerId': 'programmatic_chart_div6',
+          'options': {
+            'width': 300,
+            'height': 300,
+            'legend': 'none',
+            'chartArea': {'left': 15, 'top': 15, 'right': 0, 'bottom': 0},
+            'pieSliceText': 'value'
+          }
+        });
+
+        var data6 = google.visualization.arrayToDataTable([
+          ['Name', '40대 여자'],
+          ['우도' , 8.92],
+          ['사라오름(둘레길)', 9.91],
+          ['성산일출봉', 8.22]
+
+        ]);
+
+        dashboard.bind(programmaticSlider6, programmaticChart6);
+        dashboard.draw(data6);
+      }
+    <!-- 구글 pie_chart 코딩 (40대 남자): End -->
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">BigData Analysis</a>
+            </div>
+            <!-- /.navbar-header -->
+
+
+
+                <!-- /.dropdown -->
+
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="line_chart.html">연령대별 지역 선호도 차트</a>
+                                </li>
+                                <li>
+                                    <a href="pie_chart.html">월별 남녀 지역 선호도 차트</a>
+                                </li>
+                                <li>
+                                    <a href="time_chart.html">시간대별 지역 선호도 차트</a>
+                                </li>
+                                <li>
+                                    <a href="solo_chart.html">솔로를 위한 최고의 차트</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">월별 남녀 지역선호도 차트</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                 <!--- 20대 남자 추가 코딩 Start --->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            2015년 10월
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                        <div id="programmatic_dashboard_div" style="border: 1px solid #ccc">
+                            <table class="columns">
+                                <tr>
+                                    <td>
+                                        <div id="programmatic_control_div" style="padding-left: 2em; min-width: 250px"></div>
+                                        <div>
+
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div id="programmatic_chart_div"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+
+                <!-- 추가 20대 남자 코딩 작업 End --->
+
+                 <!--- 20대 여자 추가 코딩 Start --->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            2015년 10월
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                        <div id="programmatic_dashboard_div2" style="border: 1px solid #ccc">
+                            <table class="columns">
+                                <tr>
+                                    <td>
+                                        <div id="programmatic_control_div2" style="padding-left: 2em; min-width: 250px"></div>
+                                        <div>
+
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div id="programmatic_chart_div2"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- 20대 여자 추가 코딩 작업 End --->
+
+                <!--- 30대 남자 추가 코딩 Start --->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            2015년 10월
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                        <div id="programmatic_dashboard_div3" style="border: 1px solid #ccc">
+                            <table class="columns">
+                                <tr>
+                                    <td>
+                                        <div id="programmatic_control_div3" style="padding-left: 2em; min-width: 250px"></div>
+                                        <div>
+
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div id="programmatic_chart_div3"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- 30대 남자 추가 코딩 작업 End --->
+
+                <!--- 30대 여자 추가 코딩 Start --->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            2015년 10월
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                        <div id="programmatic_dashboard_div4" style="border: 1px solid #ccc">
+                            <table class="columns">
+                                <tr>
+                                    <td>
+                                        <div id="programmatic_control_div4" style="padding-left: 2em; min-width: 250px"></div>
+                                        <div>
+
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div id="programmatic_chart_div4"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- 30대 여자 추가 코딩 작업 End --->
+
+               <!--- 40대 남자 추가 코딩 Start --->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            2015년 10월
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                        <div id="programmatic_dashboard_div5" style="border: 1px solid #ccc">
+                            <table class="columns">
+                                <tr>
+                                    <td>
+                                        <div id="programmatic_control_div5" style="padding-left: 2em; min-width: 250px"></div>
+                                        <div>
+
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div id="programmatic_chart_div5"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- 40대 남자 추가 코딩 작업 End --->
+
+                <!--- 40대 여자 추가 코딩 Start --->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            2015년 10월
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                        <div id="programmatic_dashboard_div6" style="border: 1px solid #ccc">
+                            <table class="columns">
+                                <tr>
+                                    <td>
+                                        <div id="programmatic_control_div6" style="padding-left: 2em; min-width: 250px"></div>
+                                        <div>
+
+                                        </div>
+
+                                    </td>
+                                    <td>
+                                        <div id="programmatic_chart_div6"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- 40대 여자 추가 코딩 작업 End --->
+
+                <!-- -->
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <script src="../vendor/flot/excanvas.min.js"></script>
+    <script src="../vendor/flot/jquery.flot.js"></script>
+    <script src="../vendor/flot/jquery.flot.pie.js"></script>
+    <script src="../vendor/flot/jquery.flot.resize.js"></script>
+    <script src="../vendor/flot/jquery.flot.time.js"></script>
+    <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+    <script src="../data/flot-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
